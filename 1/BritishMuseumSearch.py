@@ -1,5 +1,3 @@
-
-
 def british_museum_search(graph, start, goal):
     all_paths = []
 
@@ -22,7 +20,11 @@ def british_museum_search(graph, start, goal):
             min_cost = cost
             best_path = path
 
-    print(f"Best Path: {best_path} \n cost {min_cost}")
+    if best_path is None:
+        print("No path found.")
+    else:
+        print(f"Best Path: {best_path} \nCost: {min_cost}")
+
     return best_path
 
 graph = {
@@ -35,4 +37,4 @@ graph = {
     'G': {'D': 2, 'E': 3, 'F': 6}
 }
 
-british_museum_search(graph, 'S', 'G')
+british_museum_search(graph, 'A', 'G')
